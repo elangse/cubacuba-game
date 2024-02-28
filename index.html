@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hexaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" media="all">
+</head>
+<body>
+   <div class="game-window">
+       <div class="game-layer">
+           <section id="layer-welcome">
+               <h1 class="game-title">Hexaria</h1>
+               <div class="btn-menu">
+                   <p class="text-option">Pilih mode permainan: </p>
+                   <label for="mode_2p" class="choices" onclick="SetMode('2p')">
+                       <input id="mode_2p" type="radio" name="mode" value="2p">
+                       <span class="choices-mark choices-mark-big">2 Player</span>
+                   </label>
+                   <label for="mode_bot" class="choices" onclick="SetMode('bot')">
+                       <input id="mode_bot" type="radio" name="mode">
+                       <span class="choices-mark choices-mark-big">Lawan BOT</span>
+                   </label>
+               </div>
+
+               <div class="btn-menu vertical">
+                   <p class="text-option">Pilih tingkat kesulitan: </p>
+
+                   <label class="choices" for="level_1" onclick="SetLevel(1)">
+                       <input id="level_1" type="radio" name="level">
+                       <span class="choices-mark choices-mark-big">Easy</span>
+                   </label>
+                   <label class="choices" for="level_2" onclick="SetLevel(2)">
+                       <input id="level_2" type="radio" name="level">
+                       <span class="choices-mark choices-mark-big">Medium</span>
+                   </label>
+                   <label class="choices" for="level_3" onclick="SetLevel(3)">
+                       <input id="level_3" type="radio" name="level">
+                       <span class="choices-mark choices-mark-big">Hard</span>
+                   </label>
+               </div>
+
+               <button class="btn btn-big btn-play" disabled onclick="LayerShow(1)">Play</button>
+           </section>
+
+           <section id="layer-nama">
+               <h1 class="game-title">Hexaria</h1>
+
+               <div class="form-control">
+                   <label for="nama_p1">Nama Player 1</label>
+                   <input id="nama_p1" class="input" type="text" name="nama_p1" onkeyup="InputName(event)">
+               </div>
+
+               <div class="form-control">
+                   <label for="nama_p2">Nama Player 2</label>
+                   <input id="nama_p2" class="input" type="text" name="nama_p2" onkeyup="InputName(event)">
+               </div>
+
+               <button class="btn btn-big btn-play" style="margin-top: 20px;" disabled onclick="InitGame()">Play!</button>
+           </section>
+
+           <section id="layer-game">
+               <h1 class="game-title">Hexaria</h1>
+
+               <section class="game-canvas">
+                   <!--
+                   <div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>1</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>2</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>3</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>4</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>5</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>6</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>7</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>8</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>9</span>
+                       </div>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-biru.svg" alt="">
+                           <span>10</span>
+                       </div>
+                   </div>
+                   -->
+
+               </section>
+               <section class="game-hud">
+                   <div class="game-current-turn">
+                       <span>Hexagonal: </span>
+                       <div class="game-hexa">
+                           <img src="img/hexagon-merah.svg" alt="">
+                           <span>10</span>
+                       </div>
+                   </div>
+
+                   <div class="game-skor">
+                       <div id="skor-p1">
+                           <p class="nama-player">Budi </p>
+                           <span class="skor">208</span>
+                       </div>
+                       <div id="skor-p2">
+                           <p class="nama-player">Irfan</p>
+                           <span class="skor">123</span>
+                       </div>
+                   </div>
+               </section>
+           </section>
+       </div>
+
+       <aside class="game-aside">
+           <h2 class="title"> Panduan Bermain</h2>
+
+           <p style="margin-bottom: 10px;">Dominasi wilayah dengan poin hexagonal terbanyak.</p>
+           <ol class="list">
+               <li>
+                   <p>Klik hexagonal <b>hitam</b> untuk menduduki wilayah</p>
+               </li>
+               <li>
+                   <p>Rebut hexagonal musuh yang memiliki poin lebih rendah</p>
+               </li>
+               <li>
+                   <p>Dominasi seluruh wilayah dengan hexagonal milikmu dan menangkan permainan</p>
+               </li>
+           </ul>
+       </aside>
+   </div>
+    <script src="index.js"></script>
+</body>
+</html>

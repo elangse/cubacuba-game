@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+html, body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(51 65 85);
+}
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+.game-window {
+    width: 900px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    margin: auto;
+    margin-top: 20px;
+    background: #efefef;
+}
+.game-layer {
+    display: flex;
+    flex-flow: column wrap;
+    border: 1px solid #000;
+}
+.game-layer > section {
+    display: none;
+    flex-flow: column wrap;
+    height: 100%;
+    padding: 0 15px;
+}
+.game-layer > section.active {
+    display: flex;
+}
+
+.game-title {
+    font-size: 4rem;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.game-aside {
+    display: flex;
+    flex-flow: column wrap;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.game-aside .title {
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.choices {
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.choices input {
+    margin: 0; padding: 0;
+    height: 0; width: 0;
+}
+.choices input ~ .choices-mark {
+    display: inline-block;
+    padding: 4px 8px;
+    color: #aaa;
+    background-color: rgb(226 232 240);
+    border: 3px solid rgb(203 213 225);
+    border-radius: 5px;
+}
+.choices input:checked ~ .choices-mark {
+    color: #000;
+    background-color: rgb(251 191 36);
+    border-color: rgb(245 158 11);
+}
+.choices-mark.choices-mark-big {
+    padding: 8px 16px;
+    font-size: 2rem;
+    min-width: 150px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid rgb(245 158 11);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(251 191 36);
+}
+.btn:hover {
+    background-color: rgb(245 158 11);
+}
+.btn:active {
+    background-color: rgb(217 119 6);
+    border-color: rgb(217 119 6);
+    color: #fff;
+}
+.btn[disabled] {
+    color: #aaa;
+    background-color: rgb(226 232 240);
+    border-color: rgb(203 213 225);
+}
+
+.btn-big {
+    padding: 8px 16px;
+    font-size: 2rem;
+    border-width: 3px;
+}
+.btn-menu {
+    margin: auto;
+}
+.btn-menu.vertical {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.text-option {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.btn-play {
+    width: 350px;
+    margin: auto;
+}
+/* game grid css */
+.game-canvas {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.game-canvas > div:nth-child(odd){
+    display: grid;
+    grid-template-columns: repeat(10, 52px);
+}
+.game-canvas > div:nth-child(odd):not(:first-child) {
+    margin-top: -15px;
+}
+.game-canvas > div:nth-child(even) {
+    display: grid;
+    grid-template-columns: repeat(10, 52px);
+    margin-left: 52px;
+    margin-top: -15px;
+}
+/* game grid css - end */
+
+.game-hexa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    color: #fff;
+}
+.game-hexa img {
+    height: 100%;
+    width: 100%;
+    transform: rotate(30deg);
+}
+.game-hexa span {
+    position: absolute;
+    top: 35%;
+}
+
+.game-hud {
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto auto 15px auto;
+    gap: 15px;
+}
+.game-current-turn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-skor {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 30px;
+}
+.skor {
+    display: inline-block;
+}
+#skor-p1:before {
+    content: '';
+    height: 18px;
+    width: 18px;
+    background-color: #ef4444;
+
+    position: absolute;
+    top: 0;
+    left: -22px;
+}
+#skor-p2:before {
+    content: '';
+    height: 18px;
+    width: 18px;
+    background-color: #14b8a6;
+
+    position: absolute;
+    top: 0;
+    left: -22px;
+}
+
+/* utilitize */
+.d-flex { display: flex; }
+.d-hide { display: none; }
+
+.form-control {
+    margin-bottom: 10px;
+}
+.form-control input[type="text"] {
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.list{
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+}

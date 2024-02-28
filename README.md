@@ -4,7 +4,8 @@ Sudah:
 * welcome page + JS
 * input nama + JS
 
-  Belum:
-  * Panduan animated
-  * Leaderboard
-  * Game Mekanik
+
+Belum:
+* Panduan animated
+* Leaderboard
+* Game Mekanik
